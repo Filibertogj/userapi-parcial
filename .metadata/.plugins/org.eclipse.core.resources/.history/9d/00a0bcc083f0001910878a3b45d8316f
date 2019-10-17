@@ -1,0 +1,10 @@
+package co.edu.unilibre.stock.service;
+
+import java.util.List;
+
+import co.edu.unilibre.stock.entity.Countryapi;
+
+public interface IUserapiService {
+	public List<Countryapi> getAllList();
+	public Countryapi getById(Long id);
+}

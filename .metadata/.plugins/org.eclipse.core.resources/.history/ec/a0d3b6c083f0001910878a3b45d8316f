@@ -1,0 +1,28 @@
+package co.edu.unilibre.stock.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import co.edu.unilibre.stock.entity.Countryapi;
+import co.edu.unilibre.stock.repository.ICountryRepository;
+import co.edu.unilibre.stock.service.IUserapiService;
+
+@Service
+public class UserapiService implements IUserapiService{
+
+	@Autowired
+	private ICountryRepository productRepository;
+	
+	@Override
+	public List<Countryapi> getAllList() {
+		return productRepository.findAll();
+	}
+
+	@Override
+	public Countryapi getById(Long id) {
+		return productRepository.findById(id).get();
+	}
+	
+}
